@@ -405,8 +405,9 @@ def copy_fixed_headers(directory, xml):
     '''copy the fixed protocol headers to the target directory'''
     import shutil
     hlist = [ 'protocol.h', 'mavlink_helpers.h', 'mavlink_types.h', 'checksum.h', 'mavlink_protobuf_manager.hpp' ]
-    basepath = os.path.dirname(os.path.realpath(__file__))
-    srcpath = os.path.join(basepath, 'C/include_v%s' % xml.wire_protocol_version)
+    # basepath = os.path.dirname(os.path.realpath(__file__))
+    # srcpath = os.path.join(basepath, 'C/include_v%s' % xml.wire_protocol_version)
+    srcpath = 'files\mavlink_generator\C\include_v%s' % xml.wire_protocol_version
     print("Copying fixed headers")
     for h in hlist:
         if (not (h == 'mavlink_protobuf_manager.hpp' and xml.wire_protocol_version == '0.9')):

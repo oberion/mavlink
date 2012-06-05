@@ -65,13 +65,17 @@ if __name__=="__main__":
     from optparse import OptionParser
 
     # allow import from the parent directory, where mavutil.py is
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
+    # sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
+    parentDir = os.getcwd()
+    generatorDir = parentDir + '\generator'
+    sys.path.append(parentDir)
+    sys.path.append(generatorDir)
 
     import mavparse
     import mavgen_python
     import mavgen_c
 
-    parser = OptionParser("%prog [options] <XML files>")
+    parser = OptionParser("mavgen.py [options] <XML files>")
     parser.add_option("-o", "--output", dest="output", default="mavlink", help="output directory.")
     parser.add_option("--lang", dest="language", default="python", help="language of generated code: 'Python' or 'C' [default: %default]")
     parser.add_option("--wire-protocol", dest="wire_protocol", default=mavparse.PROTOCOL_0_9, help="MAVLink protocol version: '0.9' or '1.0'. [default: %default]")

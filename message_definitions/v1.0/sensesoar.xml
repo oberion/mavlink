@@ -2,6 +2,11 @@
 <mavlink>
      <include>common.xml</include>
      <enums>
+          <enum name="MAV_AUTOPILOT">
+               <entry value="13" name="MAV_AUTOPILOT_SENSESOAR">
+                    <description>Autopilot for the senseSoar project</description>
+               </entry>
+          </enum>
           <enum name="SENSESOAR_MODE">
                <description> Different flight modes </description>
                <entry name="SENSESOAR_MODE_GLIDING">  Gliding mode with motors off</entry>

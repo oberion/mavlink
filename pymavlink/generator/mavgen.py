@@ -66,8 +66,8 @@ if __name__=="__main__":
 
     # allow import from the parent directory, where mavutil.py is
     # sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
-    parentDir = os.getcwd()
-    generatorDir = parentDir + '\generator'
+    generatorDir = os.getcwd()
+    parentDir = os.path.dirname(generatorDir)
     sys.path.append(parentDir)
     sys.path.append(generatorDir)
 
